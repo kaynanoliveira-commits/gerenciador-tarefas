@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciador de Tarefas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📚 Gerenciador de Tarefas</h1>
+        </header>
+
+        <nav class="abas">
+            <button class="btn-aba ativo" data-aba="tarefas">Tarefas</button>
+            <button class="btn-aba" data-aba="eventos">Eventos</button>
+            <button class="btn-aba" data-aba="anotacoes">Anotações</button>
+        </nav>
+
+        <!-- ABA TAREFAS -->
+        <section id="tarefas" class="aba ativa">
+            <h2>Minhas Tarefas</h2>
+            <div class="formulario">
+                <input type="text" id="inputTarefa" placeholder="Adicionar nova tarefa...">
+                <select id="selectMateria">
+                    <option value="">Sem matéria</option>
+                    <option value="Matemática">Matemática</option>
+                    <option value="Português">Português</option>
+                    <option value="História">História</option>
+                    <option value="Geografia">Geografia</option>
+                    <option value="Ciências">Ciências</option>
+                    <option value="Inglês">Inglês</option>
+                </select>
+                <select id="selectPrioridade">
+                    <option value="Baixa">Baixa</option>
+                    <option value="Média" selected>Média</option>
+                    <option value="Alta">Alta</option>
+                </select>
+                <input type="date" id="inputDataTarefa">
+                <button onclick="adicionarTarefa()">Adicionar</button>
+            </div>
+            <div id="listaTarefas" class="lista"></div>
+        </section>
+
+        <!-- ABA EVENTOS -->
+        <section id="eventos" class="aba">
+            <h2>Eventos</h2>
+            <div class="formulario">
+                <input type="text" id="inputEvento" placeholder="Adicionar novo evento...">
+                <select id="selectTipoEvento">
+                    <option value="Prova">Prova</option>
+                    <option value="Trabalho">Trabalho</option>
+                    <option value="Apresentação">Apresentação</option>
+                    <option value="Reunião">Reunião</option>
+                    <option value="Outro">Outro</option>
+                </select>
+                <input type="date" id="inputDataEvento">
+                <button onclick="adicionarEvento()">Adicionar</button>
+            </div>
+            <div id="listaEventos" class="lista"></div>
+        </section>
+
+        <!-- ABA ANOTAÇÕES -->
+        <section id="anotacoes" class="aba">
+            <h2>Anotações</h2>
+            <div class="formulario">
+                <select id="selectMateriaAnotacao">
+                    <option value="Geral">Geral</option>
+                    <option value="Matemática">Matemática</option>
+                    <option value="Português">Português</option>
+                    <option value="História">História</option>
+                    <option value="Geografia">Geografia</option>
+                    <option value="Ciências">Ciências</option>
+                    <option value="Inglês">Inglês</option>
+                </select>
+                <textarea id="inputAnotacao" placeholder="Digite sua anotação..."></textarea>
+                <button onclick="adicionarAnotacao()">Salvar Anotação</button>
+            </div>
+            <div id="listaAnotacoes" class="lista"></div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
